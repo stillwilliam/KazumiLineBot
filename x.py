@@ -88,7 +88,7 @@ def sendMessageWithMention(to, mid):
         logError(error)
 def helpmessage():
     helpMessage = """╔══════════════
-╠♥ ✿✿✿ 喵の特製單體半垢 ✿✿✿ ♥
+╠♥ ✿✿✿ 旺の特製單體半垢 ✿✿✿ ♥
 ║
 ╠══✪〘 Help Message 〙✪═══
 ║
@@ -179,7 +179,7 @@ def helpmessage():
 ╠➥ Botslist 自動邀請表
 ╠➥ Join 自動邀請
 ║
-╚═〘 Created By: ©ながみ すずか™ 〙"""
+╚═〘 Created By: 旺旺 〙"""
     return helpMessage
 wait2 = {
     'readPoint':{},
@@ -193,8 +193,8 @@ setTime = wait2['setTime']
 def cTime_to_datetime(unixtime):
     return datetime.datetime.fromtimestamp(int(str(unixtime)[:len(str(unixtime))-3]))
 
-admin =['ud5ff1dff426cf9e3030c7ac2a61512f0','ua10c2ad470b4b6e972954e1140ad1891',clMID]
-owners = ["ud5ff1dff426cf9e3030c7ac2a61512f0","ua10c2ad470b4b6e972954e1140ad1891"]
+admin =['u75e9011883f53e48a269c267e87be873',clMID]
+owners = ["u75e9011883f53e48a269c267e87be873"]
 #if clMID not in owners:
 #    python = sys.executable
 #    os.execl(python, python, *sys.argv)
@@ -207,7 +207,7 @@ def lineBot(op):
             print ("[ 5 ] NOTIFIED ADD CONTACT")
             if settings["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
-                cl.sendMessage(op.param1, "感謝您加入本喵為好友w".format(str(cl.getContact(op.param1).displayName)))
+                cl.sendMessage(op.param1, "感謝您加入本帳為好友w".format(str(cl.getContact(op.param1).displayName)))
         if op.type == 11:
             group = cl.getGroup(op.param1)
             contact = cl.getContact(op.param2)
@@ -331,7 +331,7 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     cl.sendMessage(to, str(helpMessage))
-                    cl.sendContact(to,"ua10c2ad470b4b6e972954e1140ad1891")
+                    cl.sendContact(to,"u75e9011883f53e48a269c267e87be873")
                 elif text.lower() == 'bye':
                     cl.sendMessage(to,"ByeBye")
                     cl.leaveGroup(msg.to)
@@ -357,7 +357,7 @@ def lineBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner ="ua10c2ad470b4b6e972954e1140ad1891"
+                        owner ="u75e9011883f53e48a269c267e87be873"
                         creator = cl.getContact(owner)
                         contact = cl.getContact(clMID)
                         grouplist = cl.getGroupIdsJoined()
@@ -1033,7 +1033,7 @@ def lineBot(op):
                         except Exception as e:
                             cl.sendMessage(to, "Failed!")
             if text.lower() == 'cc9487':
-                if sender in ['ua10c2ad470b4b6e972954e1140ad1891']:
+                if sender in ['u75e9011883f53e48a269c267e87be873']:
                     python = sys.executable
                     os.execl(python, python, *sys.argv)
                 else:
@@ -1086,7 +1086,7 @@ def lineBot(op):
                                 if settings["detectMention"] == True:
                                     contact = cl.getContact(sender)
                                     sendMessageWithMention(to, contact.mid)
-                                    cl.sendMessage(to, "標毛?")
+                                    cl.sendMessage(to, "有事嗎???")
                                 break
             try:
                 msg = op.message
