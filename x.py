@@ -1,6 +1,6 @@
 # -*-coding: utf-8 -*-
 
-from linepy import *
+from Linphu.linepy import *
 from datetime import datetime
 from time import sleep
 from humanfriendly import format_timespan, format_size, format_number, format_length
@@ -333,8 +333,9 @@ def lineBot(op):
                     cl.sendMessage(to, str(helpMessage))
                     cl.sendContact(to,"u75e9011883f53e48a269c267e87be873")
                 elif text.lower() == 'bye':
-                    cl.sendMessage(to,"ByeBye")
-                    cl.leaveGroup(msg.to)
+                    if sender == "u75e9011883f53e48a269c267e87be873":
+                        cl.sendMessage(to,"ByeBye")
+                        cl.leaveGroup(msg.to)
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
